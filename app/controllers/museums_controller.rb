@@ -1,5 +1,6 @@
 class MuseumsController < ApplicationController
   def index
+    @museums = Museum.all
   end
 
   def new
@@ -16,7 +17,7 @@ class MuseumsController < ApplicationController
   end
 
   private
-  def prototype_params
+  def museum_params
     params.require(:museum).permit(:title, :place, :prefecture_id, :genre_id, :artist, :text, :image).merge(user_id: current_user.id)
   end
 end
