@@ -1,22 +1,38 @@
 <%= form_with local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge %>
+    <%= f.label :title, "展覧会名" %><br />
+    <%= f.text_field :title, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text %>
+    <%= f.label :place, "会場" %><br />
+    <%= f.text_area :place, class: :form__text %>
+  </div>
+
+  <div class="form">
+    <div class="weight-bold-text">
+      都道府県
+    </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    <div class="weight-bold-text">
+      ジャンル
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text %>
+    <%= f.label :artist, "アーティスト" %><br />
+    <%= f.text_area :artist, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge %>
+    <%= f.label :text, "説明" %><br />
+    <%= f.text_area :text, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">
