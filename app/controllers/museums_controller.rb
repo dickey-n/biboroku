@@ -16,6 +16,10 @@ class MuseumsController < ApplicationController
     end
   end
 
+  def show
+    @museum = Museum.find(params[:id])
+  end
+
   private
   def museum_params
     params.require(:museum).permit(:title, :place, :prefecture_id, :genre_id, :artist, :text, :image).merge(user_id: current_user.id)
