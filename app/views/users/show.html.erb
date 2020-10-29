@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="user__wrapper">
       <% if @user.image? %>
-        <%= image_tag @user.image.url, class: :profile_image %>
+        <%= image_tag @user.image.url, class: :profile_image, alt: `default.jpg` %>
       <% end %>
       <h2 class="page-heading">
         Info
