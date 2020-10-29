@@ -1,6 +1,7 @@
 class MuseumsController < ApplicationController
   def index
     @museums = Museum.all
+    @memos = Memo.all
   end
 
   def new
@@ -18,7 +19,6 @@ class MuseumsController < ApplicationController
 
   def show
     @museum = Museum.find(params[:id])
-    @memo = Memo.new
     @memos = @museum.memos.includes(:user)
   end
 

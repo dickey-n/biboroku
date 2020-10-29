@@ -51,17 +51,7 @@
       </div>
 
       <div class="museum__comments">
-        <% if user_signed_in? %>
-          <%= form_with(model: [@museum,@memo], local: true) do |f|%>
-            <div class="field">
-              <%= f.label :memo, "memo" %><br />
-              <%= f.text_field :memo %>
-            </div>
-            <div class="actions">
-              <%= f.submit "SEND", class: :form__btn %>
-            </div>
-          <% end %> 
-        <% end %>
+      <%= link_to image_tag("pen.png", class: :icon), "/museums/#{@museum.id}/memos/new" %>
         <ul class="comments_lists">
           <% if @memos %>
             <% @memos.each do |memo| %>
