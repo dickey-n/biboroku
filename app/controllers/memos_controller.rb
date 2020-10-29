@@ -14,6 +14,10 @@ class MemosController < ApplicationController
     end
   end
 
+  def show
+    @memo = Memo.find(params[:id])
+  end
+
   private
   def memo_params
     params.permit(:memo).merge(user_id: current_user.id, museum_id: params[:museum_id])

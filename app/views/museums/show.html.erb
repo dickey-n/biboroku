@@ -56,7 +56,7 @@
           <% if @memos %>
             <% @memos.each do |memo| %>
               <li class="comments_list">
-                <%= memo.memo%>
+                <%= link_to memo.memo, "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
                 <%= link_to memo.user.name, "/users/#{memo.user.id}", class: :memo_user %>
               </li>
             <% end %>
