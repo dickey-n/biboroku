@@ -19,6 +19,11 @@
       <h2 class="page-heading">
         <%= "#{@user.name}のメモ"%>
       </h2>
+      <% @user.memos.each do |memo|%>
+        <li class="comments_list">
+          <%= memo.memo %>
+        </li>
+      <% end %>
     </div>
   </div>
 </div>
