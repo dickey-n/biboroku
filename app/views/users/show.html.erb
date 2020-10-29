@@ -2,22 +2,25 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "#{@user.name}の情報"%>
+        Info
       </h2>
       <table class="table">
         <tbody>
+          <% if @user.image? %>                                                              
+            <%= image_tag @user.image.url %>
+          <% end %>
           <tr>
-            <th class="table__col1">名前</th>
+            <th class="table__col1">Name</th>
             <td class="table__col2"><%= @user.name %></td>
           </tr>
           <tr>
-            <th class="table__col1">自己紹介</th>
+            <th class="table__col1">Introduce</th>
             <td class="table__col2"><%= @user.profile %></td>
           </tr>
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "#{@user.name}のメモ"%>
+        <%= "#{@user.name}'s memo"%>
       </h2>
       <% @user.memos.each do |memo|%>
         <li class="comments_list">

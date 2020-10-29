@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   has_many :memos
   has_many :museums
+
+  mount_uploader :image, ImageUploader
 end
