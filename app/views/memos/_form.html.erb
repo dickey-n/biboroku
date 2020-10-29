@@ -1,0 +1,9 @@
+<%= form_with url: "/museums/#{params[:museum_id]}/memos", method: :post, local: true do |f| %>
+  <div class="field">
+    <%= f.label :memo, "memo" %><br />
+    <%= f.text_field :memo %>
+  </div>
+  <div class="actions">
+    <%= f.submit "SEND", class: :form__btn %>
+  </div>
+<% end %> 

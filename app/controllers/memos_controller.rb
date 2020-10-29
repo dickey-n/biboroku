@@ -1,4 +1,8 @@
-class MemosController < ApplicationController
+class MemosController < ApplicationController 
+  def new
+    @memo = Memo.new
+  end
+
   def create
     @memo = Memo.new(memo_params)
     if @memo.save
@@ -10,8 +14,12 @@ class MemosController < ApplicationController
     end
   end
 
+  def show
+    @memo = Memo.find(params[:id])
+  end
+
   private
   def memo_params
-    params.require(:memo).permit(:memo).merge(user_id: current_user.id, museum_id: params[:museum_id])
+    params.permit(:memo).merge(user_id: current_user.id, museum_id: params[:museum_id])
   end
 end

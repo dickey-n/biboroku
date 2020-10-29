@@ -1,0 +1,22 @@
+<main class="main">
+  <div class="inner">
+    <div class="museum__wrapper">
+      <p class="museum__hedding">
+        <%= @memo.museum.title%>
+      </p>
+
+      <div class="museum__image">
+        <%= image_tag @memo.museum.image %>
+      </div>
+
+      <div class="museum__comments">
+        <ul class="comments_lists">
+          <li class="comments_list">
+            <%= @memo.memo%>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</main>
