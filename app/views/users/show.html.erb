@@ -1,14 +1,14 @@
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
+      <% if @user.image? %>
+        <%= image_tag @user.image.url, class: :profile_image %>
+      <% end %>
       <h2 class="page-heading">
         Info
       </h2>
       <table class="table">
         <tbody>
-          <% if @user.image? %>                                                              
-            <%= image_tag @user.image.url %>
-          <% end %>
           <tr>
             <th class="table__col1">Name</th>
             <td class="table__col2"><%= @user.name %></td>
