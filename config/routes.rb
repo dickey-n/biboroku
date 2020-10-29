@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :museums do
     resources :memos, only: :create
   end
+
+  resources :users, only: :show
 end
