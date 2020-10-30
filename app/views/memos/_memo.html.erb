@@ -1,7 +1,14 @@
 <div class="card">
+  <div class="memo_user">
+    <% if memo.user.image? %>
+      <%= image_tag memo.user.image.url, class: :profile_image, alt: 'app/assets/images/default.jpg' %>
+    <% else %>
+      <img src="/assets/default.jpg" class="profile_image" alt="ユーザーアイコン" >
+    <% end %>
+    <%= link_to memo.user.name, "/users/#{memo.user.id}", class: :memo_user %>
+  </div>
   <li class="comments_list">
-    <%= link_to memo.memo, "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
-    /<%= link_to memo.museum.title, "/museums/#{memo.museum.id}", class: :memo_user %>
-    /<%= link_to memo.user.name, "/users/#{memo.user.id}", class: :memo_user %>
+    <%= link_to memo.memo, "/museums/#{memo.museum.id}", class: :memo_user %>
+    <%#= link_to memo.museum.title, "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
   </li>
 </div>

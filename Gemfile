@@ -62,3 +62,7 @@ gem 'active_hash'
 gem 'jquery-rails'
 
 gem 'pry-rails'
+
+gem 'carrierwave'
+
+gem 'rmagick'
