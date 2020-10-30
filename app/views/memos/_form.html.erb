@@ -1,7 +1,7 @@
 <%= form_with url: "/museums/#{params[:museum_id]}/memos", method: :post, local: true do |f| %>
-  <div class="field">
+  <div class="memo_field">
     <%= f.label :memo, "memo" %><br />
-    <%= f.text_field :memo %>
+    <%= f.text_area :memo, class: :text_area, placeholder: "作品の感想を思いのままに書いてみよう" %>
   </div>
   <div class="actions">
     <%= f.submit "SEND", class: :form__btn %>

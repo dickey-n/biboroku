@@ -38,34 +38,40 @@ a {
 
 .header {
   background-color: #ffffff;
-  margin-bottom: 48px;
+  margin-bottom: 50px;
   padding: 20px 0;
-
 }
+
 .inner {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+
 .logo {
   width: 200px;
 }
+
 .nav__right{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .icon{
   height: 45px;
   padding: 10px;
 }
+
 .icon:hover{
   opacity: 0.6;
 }
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
@@ -76,7 +82,7 @@ a {
 }
 
 .field{
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .actions{
@@ -102,6 +108,15 @@ a {
   cursor: pointer;
 }
 
+.memo_field{
+  margin: 30px 0;
+}
+
+.text_area{
+  height: calc(100vh - 400px);
+  width: calc(100vh - 100px);
+}
+
 /* メイン */
 
 .card__wrapper {
@@ -109,60 +124,87 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 161px);
+  min-height: calc(100vh - 100px);
 }
+
 .card {
   width: calc((100% - 50px) / 3);
 }
+
 .card__title{
+  font-weight: bold;
   font-size: 30px;
 }
+
 .card__img {
-  margin-bottom: 16px;
+  margin: 20px;
+}
+
+.memo__title{
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.profile_image{
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+
+.profile_image:hover{
+  opacity: 0.6;
+}
+
+.memos_list{
+  text-align: left;
+  margin: 20px 0;
 }
 
 /* 詳細ページ */
 .museum__wrapper{
   min-height: calc(100vh - 161px);
-  position: relative;
 }
+
 .museum__hedding{
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
   text-align: center;
 }
-.museum__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
-}
+
 .museum__body{
-  position: absolute;
-  top: 15%;
-  right: 200px;
+  top: 10%;
+  right: 40%;
 }
+
 .museum__image{
-  width: 40%;
-  margin: auto 0;
-  padding: 50px 0;
+  height: 20%;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  padding: 60px 0;
 }
+
 .museum__detail{
   display: flex;
   align-items: right;
   flex-direction: column;
-  margin-bottom: 8px;
+  margin: 30px 0;
 }
+
 .detail__title{
   font-size: 20px;
   font-weight: bold;
 }
+
 .museum__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
+
 .museum__btn{
   display: block;
   padding: 0.4em 1.6em;
@@ -175,67 +217,110 @@ a {
   transition: 0.4s ease;
   margin: 0 4px;
 }
+
 .museum__btn:hover{
   color: #fff;
   background: #999;
 }
 
-.museum__comments{
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin: 28px 0 40px 0;
+.museum__memos{
+  background-color: #ffffff;
+  margin: 70px 0 40px 0;
 }
 
 .comments_lists{
-  padding-left: 20px;
+  padding: 10px 0;
 }
 
 .comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
+  padding-bottom: 30px;
 }
 
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
+.memo_icon{
+  height: 45px;
+  padding: 8px;
+}
+
+.memo_icon:hover{
+  opacity: 0.4;
+}
+
+.memo_title{
+  float: left;
+}
+/* メモ詳細ページ */
+.museum_image{
+  width: 30%;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.museum_comments{
+  padding-bottom: 30px;
+}
+
+.museum_image:hover{
+  opacity: 0.6;
+}
+
+.user__icon{
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+
+.user__icon:hover{
+  opacity: 0.6;
 }
 
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
 }
+
+.user-heading{
+  display: list;
+}
+
 .table{
   border-collapse: collapse;
-  margin-bottom: 32px;
   width: 50%;
+  margin: 25px 0;
 }
+
 .table__col1{
   text-align: left;
   font-weight: bold;
   background: #ffffff;
   border-collapse: collapse;
-  width: 30%;
-  padding: 8px;
+  width: 35%;
+  padding: 20px 0;
 }
+
 .table__col2{
   text-align: left;
   border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
+  width: 65%;
+  padding: 20px 0;
 }
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+
+.user_icon{
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid #333333;
 }
+
 /* フッター */
 
 .footer {
   background-color: #c7c7c7;
   padding: 10px 0;
 }
+
 .copyright {
   text-align: center;
   color: #ffffff;
@@ -284,10 +369,4 @@ a {
   .table{
     width: 100%;
   }
-}
-.profile_image{
-  width: 40px;
-  height: 40px;
-  border-radius: 100px;
-  overflow: hidden;
 }
