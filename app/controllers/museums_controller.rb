@@ -1,7 +1,7 @@
 class MuseumsController < ApplicationController
   def index
-    @museums = Museum.all
-    @memos = Memo.all
+    @museums = Museum.all.order("created_at DESC")
+    @memos = Memo.all.order("created_at DESC")
   end
 
   def new

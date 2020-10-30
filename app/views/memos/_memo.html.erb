@@ -1,14 +1,15 @@
 <div class="memo_main">
   <div class="memo_user">
     <% if memo.user.image? %>
-      <%= image_tag memo.user.image.url, class: :profile_image, alt: 'app/assets/images/default.jpg' %>
+      <%=link_to image_tag(memo.user.image.url, class: :profile_image), "/users/#{memo.user.id}" %>
     <% else %>
-      <img src="/assets/default.jpg" class="profile_image" alt="ユーザーアイコン" >
+      <%=link_to image_tag('/assets/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
     <% end %>
-    <%= link_to memo.user.name, "/users/#{memo.user.id}", class: :memo_user %>
+    <%= memo.user.name %>
   </div>
+
   <li class="memos_list">
-    <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}", class: :memo_user %>
+    <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}"%>
     <%#= link_to memo.museum.title, "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
   </li>
 </div>
