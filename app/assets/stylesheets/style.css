@@ -109,7 +109,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 161px);
+  min-height: calc(100vh - 100px);
 }
 .card {
   width: calc((100% - 50px) / 3);
@@ -124,35 +124,26 @@ a {
 /* 詳細ページ */
 .museum__wrapper{
   min-height: calc(100vh - 161px);
-  position: relative;
 }
 .museum__hedding{
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
   text-align: center;
 }
-.museum__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
-}
 .museum__body{
-  position: absolute;
-  top: 15%;
-  right: 200px;
+  top: 10%;
+  right: 40%;
 }
 .museum__image{
-  width: 40%;
-  margin: auto 0;
-  padding: 50px 0;
+  width: 50%;
+  margin: auto;
+  padding: 60px 0;
 }
 .museum__detail{
   display: flex;
   align-items: right;
   flex-direction: column;
-  margin-bottom: 8px;
+  margin: 30px 0;
 }
 .detail__title{
   font-size: 20px;
@@ -180,25 +171,25 @@ a {
   background: #999;
 }
 
-.museum__comments{
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin: 28px 0 40px 0;
+.museum__memos{
+  background-color: #ffffff;
+  margin: 70px 0 40px 0;
 }
 
 .comments_lists{
-  padding-left: 20px;
+  padding: 10px 0;
 }
 
 .comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
+  list-style-type: circle;
+  padding-bottom: 30px;
 }
-
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
+.memo_icon{
+  height: 45px;
+  padding: 8px;
+}
+.memo_title{
+  float: left;
 }
 
 /* ユーザーページ */

@@ -46,23 +46,24 @@
       <div class="museum__text">
         <p class="detail__title">説明</p>
         <p class="detail__message">
-          <%= @museum.text %>
+          <%= safe_join(@museum.text.split("\n"),tag(:br))%>
         </p>
       </div>
+    </div>
 
-      <div class="museum__comments">
-      <%= link_to image_tag("pen.png", class: :icon), "/museums/#{@museum.id}/memos/new" %>
-        <ul class="comments_lists">
-          <% if @memos %>
-            <% @memos.each do |memo| %>
-              <li class="comments_list">
-                <%= link_to memo.memo, "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
-                <%= link_to memo.user.name, "/users/#{memo.user.id}", class: :memo_user %>
-              </li>
-            <% end %>
+    <div class="museum__memos">
+      <%= link_to image_tag("pen.png", class: :memo_icon), "/museums/#{@museum.id}/memos/new" %>
+      <h2 class="memo_title">Museum's MeMo</h2>
+      <ul class="comments_lists">
+        <% if @memos %>
+          <% @memos.each do |memo| %>
+            <li class="comments_list">
+              <%= link_to memo.user.name, "/users/#{memo.user.id}", class: :memo_user %><br />
+              <%= link_to memo.memo, "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
+            </li>
           <% end %>
-        </ul>
-      </div>
+        <% end %>
+      </ul>
     </div>
   </div>
 </main>
