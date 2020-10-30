@@ -2,11 +2,11 @@
   <div class="inner">
     <div class="user__wrapper">
       <% if @user.image? %>
-        <%= image_tag @user.image.url, class: :profile_image, alt: 'app/assets/images/default.jpg' %>
+        <%= image_tag @user.image.url, class: :user_icon, alt: 'app/assets/images/default.jpg' %>
       <% else %>
-        <img src="/assets/default.jpg" class="profile_image" alt="ユーザーアイコン" >
+        <img src="/assets/default.jpg" class="user_icon" alt="ユーザーアイコン" >
       <% end %>
-      <h2 class="page-heading">
+      <h2 class="user-heading">
         Info
       </h2>
       <table class="table">
@@ -22,11 +22,11 @@
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "#{@user.name}'s memo"%>
+        <%= "#{@user.name}'s MeMo"%>
       </h2>
       <% @user.memos.each do |memo|%>
-        <li class="comments_list">
-          <%= memo.memo %>
+        <li class="memos_list">
+          <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}", class: :memo_user %>
         </li>
       <% end %>
     </div>

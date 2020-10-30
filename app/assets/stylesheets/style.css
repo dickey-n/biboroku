@@ -205,30 +205,37 @@ a {
 .user__wrapper{
   min-height: calc(100vh - 161px);
 }
+.user-heading{
+  display: list;
+}
 .table{
   border-collapse: collapse;
-  margin-bottom: 32px;
   width: 50%;
+  margin: 25px 0;
 }
 .table__col1{
   text-align: left;
   font-weight: bold;
   background: #ffffff;
   border-collapse: collapse;
-  width: 30%;
-  padding: 8px;
+  width: 35%;
+  padding: 20px 0;
 }
 .table__col2{
   text-align: left;
   border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
+  width: 65%;
+  padding: 20px 0;
 }
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+.memos_list{
+  text-align: left;
+  margin: 30px 0;
+}
+.user_icon{
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  overflow: hidden;
 }
 /* フッター */
 
