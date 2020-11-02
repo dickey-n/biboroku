@@ -4,6 +4,9 @@
     <div class="card__wrapper">
       <%= render partial: 'museum', collection: @museums %>
     </div>
+    <div class="card__list">
+      <%= paginate @museums %>
+    </div>
     <p class="memo__title">MeMos</p>
     <%= render partial: 'memos/memo', collection: @memos %>
   </div>

@@ -140,6 +140,10 @@ a {
   margin: 20px;
 }
 
+.card__list {
+  display: flex;
+}
+
 .memo__title{
   font-weight: bold;
   font-size: 30px;
