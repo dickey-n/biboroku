@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'museums#index'
 
   resources :museums do
-    resources :memos, only: [:create, :new, :show]
+    resources :memos, only: [:create, :new, :show, :index]
   end
 
   resources :users, only: :show
