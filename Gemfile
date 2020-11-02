@@ -68,3 +68,5 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'kaminari'
+
+gem 'seed-fu'
