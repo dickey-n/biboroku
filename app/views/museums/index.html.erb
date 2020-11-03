@@ -7,12 +7,12 @@
     <div class="card__list">
       <%= paginate @museums %>
     </div>
-    <p class="memo__title">MeMos</p>
+    <p class="memo__title">Recent MeMos</p>
     <div class="memo__list">
-      <div class="memo__more">
-        <%= link_to "More", "/museums/#{@museums.ids}/memos" %>
-      </div>
       <%= render partial: 'memos/memo', collection: @memos %>
+    </div>
+    <div class="memo__more">
+      <%= link_to "More →", "/museums/#{@museums.ids}/memos" %>
     </div>
   </div>
 </main>
