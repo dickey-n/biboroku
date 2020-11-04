@@ -1,10 +1,11 @@
 <main class="main">
   <div class="inner">
-    <p class="card__title">Gallery</p>
+    <p class="card__title" id="hoge">All Gallery</p>
     <div class="card__wrapper">
       <%= render partial: 'museum', collection: @museums %>
     </div>
-    <p class="memo__title">MeMos</p>
-    <%= render partial: 'memos/memo', collection: @memos %>
+    <div class="more">
+      <%= link_to "← back", root_path %>
+    </div>
   </div>
 </main>

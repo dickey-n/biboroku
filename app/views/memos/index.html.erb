@@ -1,0 +1,11 @@
+<main class="main">
+  <div class="inner">
+    <p class="memo__title">All MeMos</p>
+    <div class="memo__list">
+      <%= render partial: 'memos/memo', collection: @memos %>
+    </div>
+    <div class="more">
+      <%= link_to "← back", root_path %>
+    </div>
+  </div>
+</div>

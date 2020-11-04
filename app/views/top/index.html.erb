@@ -1,0 +1,18 @@
+<main class="main">
+  <div class="inner">
+    <p class="card__title" id="hoge">Top Gallery</p>
+    <div class="card__wrapper">
+      <%= render partial: 'museums/museum', collection: @part_museums %>
+    </div>
+    <div class="more">
+      <%= link_to "More →", museums_path %>
+    </div>
+    <p class="memo__title">Recent MeMo</p>
+    <div class="memo__list">
+      <%= render partial: 'memos/memo', collection: @memos %>
+    </div>
+    <div class="more">
+      <%= link_to "More →", "/museums/#{@all_museums.ids}/memos" %>
+    </div>
+  </div>
+</main>

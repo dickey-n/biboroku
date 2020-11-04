@@ -3,6 +3,11 @@ class MemosController < ApplicationController
     @memo = Memo.new
   end
 
+  def index
+    @memos = Memo.all.order("created_at DESC")
+    @museums = Museum.all
+  end
+
   def create
     @memo = Memo.new(memo_params)
     if @memo.save
