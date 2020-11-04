@@ -2,8 +2,7 @@ class MuseumsController < ApplicationController
   PER = 6
 
   def index
-    @museums = Museum.page(params[:page]).per(PER).order("created_at DESC")
-    @memos = Memo.order("created_at DESC").first(5)
+    @museums = Museum.all.order("created_at DESC")
   end
 
   def new
