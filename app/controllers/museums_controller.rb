@@ -1,5 +1,5 @@
 class MuseumsController < ApplicationController
-  PER = 6
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @museums = Museum.all.order("created_at DESC")

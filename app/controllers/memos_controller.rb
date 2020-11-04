@@ -1,4 +1,5 @@
-class MemosController < ApplicationController 
+class MemosController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def new
     @memo = Memo.new
   end
