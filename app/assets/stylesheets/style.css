@@ -265,6 +265,8 @@ a {
 }
 
 .memo__user{
+  height: 32px;
+  padding-left: 10px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -301,6 +303,7 @@ a {
 }
 
 .delete__icon{
+  padding: 15px 0 15px 10px;
   display: inline-block;
   vertical-align: middle;
 }
