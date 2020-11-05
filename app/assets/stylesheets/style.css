@@ -250,8 +250,10 @@ a {
 }
 
 .memo_icon{
-  height: 45px;
-  padding: 8px;
+  height: 40px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .memo_icon:hover{
