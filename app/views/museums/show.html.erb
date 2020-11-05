@@ -5,10 +5,10 @@
         <%= @museum.title%>
       </p>
 
-      <% if user_signed_in? && current_user.id == @museum.user_id %>
+      <% if current_user == @user || current_user.admin? %>
         <div class="museum__manage">
-          <%= link_to "編集する", edit_museum_path, class: :museum__btn %>
-          <%= link_to "削除する", museum_path(@museum.id), method: :delete, class: :museum__btn %>
+          <%= link_to "編集する", edit_admin_museum_path, class: :museum__btn %>
+          <%= link_to "削除する", admin_museum_path(@museum.id), method: :delete, class: :museum__btn %>
         </div>
       <% end %>
 

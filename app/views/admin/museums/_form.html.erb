@@ -1,4 +1,4 @@
-<%= form_with(model: @museum, local: true) do |f|%>
+<%= form_with model: [:admin, @museum], local: true do |f| %>
   <div class="field">
     <%= f.label :title, "展覧会名" %><br />
     <%= f.text_field :title %>
