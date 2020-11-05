@@ -261,6 +261,12 @@ a {
 .memo_title{
   float: left;
 }
+
+.memo__user{
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* メモ詳細ページ */
 .museum_image{
   width: 30%;
@@ -290,6 +296,11 @@ a {
 
 .memo_list{
   padding: 40px 0;
+}
+
+.delete__icon{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* ユーザーページ */

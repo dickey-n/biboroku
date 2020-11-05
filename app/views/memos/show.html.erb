@@ -17,7 +17,7 @@
         <% end %>
 
         <% if user_signed_in? && current_user.id == @memo.user_id %>
-          <div class="museum__manage">
+          <div class="delete__icon">
             <%= link_to image_tag("trash.png", class: :icon), museum_memo_path(@memo.id), method: :delete %>
           </div>
         <% end %>
