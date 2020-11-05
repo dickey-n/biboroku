@@ -5,14 +5,16 @@
       <%= render partial: 'museums/museum', collection: @part_museums %>
     </div>
     <div class="more">
+    <% if @all_museums.count > 6 %>
       <%= link_to "More →", museums_path %>
+    <% end %>
     </div>
     <p class="memo__title">Recent MeMo</p>
     <div class="memo__list">
       <%= render partial: 'memos/memo', collection: @memos %>
     </div>
     <div class="more">
-    <% if @all_museums.count > 6 %>
+    <% if @all_memos.count > 6 %>
       <%= link_to "More →", "/museums/#{@all_museums.ids}/memos" %>
     <% end %>
     </div>
