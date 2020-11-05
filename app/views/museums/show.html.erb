@@ -5,10 +5,10 @@
         <%= @museum.title%>
       </p>
 
-      <% if user_signed_in? && current_user.id == @museum.user_id %>
+      <% if user_signed_in? && current_user.admin? %>
         <div class="museum__manage">
-          <%= link_to "編集する", edit_museum_path, class: :museum__btn %>
-          <%= link_to "削除する", museum_path(@museum.id), method: :delete, class: :museum__btn %>
+          <%= link_to "編集する", edit_admin_museum_path, class: :museum__btn %>
+          <%= link_to "削除する", admin_museum_path(@museum.id), method: :delete, class: :museum__btn %>
         </div>
       <% end %>
 
@@ -18,25 +18,25 @@
 
       <div class="museum__body">
         <div class="museum__detail">
-          <p class="detail__title">会場</p>
+          <p class="detail__title">Museum Name</p>
           <p class="detail__message">
             <%= @museum.place %>
           </p>
         </div>
         <div class="museum__detail">
-          <p class="detail__title">都道府県</p>
+          <p class="detail__title">Prefecture</p>
           <p class="detail__message">
             <%= @museum.prefecture.name %>
           </p>
         </div>
         <div class="museum__detail">
-          <p class="detail__title">ジャンル</p>
+          <p class="detail__title">Genre</p>
           <p class="detail__message">
             <%= @museum.genre.name %>
           </p>
         </div>
         <div class="museum__detail">
-          <p class="detail__title">アーティスト</p>
+          <p class="detail__title">Artist</p>
           <p class="detail__message">
             <%= @museum.artist %>
           </p>
@@ -44,7 +44,7 @@
       </div>
 
       <div class="museum__text">
-        <p class="detail__title">展示会情報</p>
+        <p class="detail__title">Museum Info</p>
         <p class="detail__message">
           <%= safe_join(@museum.text.split("\n"),tag(:br))%>
         </p>

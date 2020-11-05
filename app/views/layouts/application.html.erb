@@ -22,7 +22,9 @@
             <div class="nav__right">
               <%= link_to image_tag("profile.png", class: :icon), "/users/#{current_user.id}" %>
               <%= link_to image_tag("logout.png", class: :icon), destroy_user_session_path %>
-              <%= link_to image_tag("pen.png", class: :icon), new_museum_path %>
+              <% if user_signed_in? && current_user.admin? %>
+                <%= link_to image_tag("pen.png", class: :icon), new_admin_museum_path %>
+              <% end %>
             </div>
           <% else %>
             <div class="nav__right">

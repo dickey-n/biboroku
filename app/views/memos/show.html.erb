@@ -15,6 +15,13 @@
         <% else %>
           <%=link_to image_tag('/assets/default.jpg', class: :user__icon), "/users/#{@memo.user.id}" %>
         <% end %>
+
+        <% if user_signed_in? && current_user.id == @memo.user_id %>
+          <div class="delete__icon">
+            <%= link_to image_tag("trash.png", class: :icon), museum_memo_path(@memo.id), method: :delete %>
+          </div>
+        <% end %>
+
         <ul class="memos_lists">
           <li class="memo_list">
             <%= safe_join(@memo.memo.split("\n"),tag(:br))%>

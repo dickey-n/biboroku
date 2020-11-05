@@ -1,10 +1,11 @@
 <div class="memo_main">
-  <div class="memo_user">
-    <% if memo.user.image? %>
-      <%=link_to image_tag(memo.user.image.url, class: :profile_image), "/users/#{memo.user.id}" %>
-    <% else %>
-      <%=link_to image_tag('/assets/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
-    <% end %>
+  <% if memo.user.image? %>
+    <%=link_to image_tag(memo.user.image.url, class: :profile_image), "/users/#{memo.user.id}" %>
+  <% else %>
+    <%=link_to image_tag('/assets/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
+  <% end %>
+
+  <div class="memo__user">
     <%= memo.user.name %>
   </div>
 
