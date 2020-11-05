@@ -27,6 +27,11 @@
             <%= safe_join(@memo.memo.split("\n"),tag(:br))%>
           </li>
         </ul>
+
+        <p>いいね件数: <%= @memo.likes.count %></p>
+        <%#= button_to 'いいねを取り消す', "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes", method: :delete %>
+        <%= button_to 'いいね', "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes" %>
+        
       </div>
       
     </div>

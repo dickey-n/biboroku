@@ -22,6 +22,7 @@ class MemosController < ApplicationController
 
   def show
     @memo = Memo.find(params[:id])
+    @like = Like.new
   end
 
   def destroy

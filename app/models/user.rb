@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_many :liked_memos, through: :likes, source: :memo
 
   mount_uploader :image, ImageUploader
+
 end
