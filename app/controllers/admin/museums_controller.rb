@@ -16,9 +16,7 @@ class Admin::MuseumsController < ApplicationController
 
   def edit
     @museum = Museum.find(params[:id])
-    unless current_user.id == @museum.user_id
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless current_user.id == @museum.user_id
   end
 
   def update
@@ -37,6 +35,7 @@ class Admin::MuseumsController < ApplicationController
   end
 
   private
+
   def if_not_admin
     redirect_to root_path unless current_user.admin?
   end

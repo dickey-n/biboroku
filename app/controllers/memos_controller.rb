@@ -5,7 +5,7 @@ class MemosController < ApplicationController
   end
 
   def index
-    @memos = Memo.all.order("created_at DESC")
+    @memos = Memo.all.order('created_at DESC')
     @museums = Museum.all
   end
 
@@ -16,7 +16,7 @@ class MemosController < ApplicationController
     else
       @museum = @memo.museum
       @memos = @museum.memos
-      render "museums/show"
+      render 'museums/show'
     end
   end
 
@@ -31,6 +31,7 @@ class MemosController < ApplicationController
   end
 
   private
+
   def memo_params
     params.permit(:memo).merge(user_id: current_user.id, museum_id: params[:museum_id])
   end
