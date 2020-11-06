@@ -303,9 +303,14 @@ a {
 }
 
 .delete__icon{
-  padding: 15px 0 15px 10px;
+  padding: 10px 0 10px 20px;
   display: inline-block;
   vertical-align: middle;
+}
+
+.delete_icon{
+  height: 40px;
+  padding: 10px 0;
 }
 
 /* ユーザーページ */
@@ -345,6 +350,31 @@ a {
   border-radius: 100px;
   overflow: hidden;
   border: 1px solid #333333;
+}
+
+/* LIKEボタン　*/
+.like__icon{
+  padding: 10px 0 ;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff!important;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #c7c7c7c7;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  color: #ee4a4a;
 }
 
 /* フッター */

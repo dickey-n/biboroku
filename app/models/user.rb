@@ -7,8 +7,16 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :profile, presence: true
 
-  has_many :memos
   has_many :museums
 
+  has_many :memos, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_memos, through: :likes, source: :memo
+
   mount_uploader :image, ImageUploader
+
+  def liked_by?(memo_id)
+    likes.where(memo_id: memo_id).exists?
+  end
+
 end

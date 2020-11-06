@@ -68,3 +68,4 @@ gem 'rmagick'
 
 gem 'kaminari'
 
+gem 'pry-rails'

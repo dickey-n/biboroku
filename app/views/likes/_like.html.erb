@@ -1,0 +1,15 @@
+<div class="delete__icon">
+<% if user_signed_in? %>
+  <% unless current_user.liked_by?(@memo.id)%>
+    <%= link_to  "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes", method: :post, remote: true do %>
+      <i class="fa fa-heart like-btn"></i>
+    <% end %>
+    <p id='like_count'>Like: <%= @memo.likes.count %></p>
+  <% else %>
+    <%= link_to  "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes/#{params[:id]}", method: :delete, remote: true do %>
+      <i class="fa fa-heart unlike-btn"></i>
+    <% end %>
+    <p id='like_count'>Like: <%= @memo.likes.count %></p>
+  <% end %>
+<% end %>
+</div>

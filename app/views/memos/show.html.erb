@@ -18,17 +18,22 @@
 
         <% if user_signed_in? && current_user.id == @memo.user_id %>
           <div class="delete__icon">
-            <%= link_to image_tag("trash.png", class: :icon), museum_memo_path(@memo.id), method: :delete %>
+            <%= link_to image_tag("trash.png", class: :delete_icon), museum_memo_path(@memo.id), method: :delete %>
+            <p id='like_count'>Like: <%= @memo.likes.count %></p>
           </div>
-        <% end %>
+        <% else %>
+          <div class="like__icon" id="like_<%= @memo.id %>" >
+            <%= render partial: "likes/like", local: {memo: @memo, like: @like} %>
+          </div>
+        <% end%>
 
         <ul class="memos_lists">
           <li class="memo_list">
             <%= safe_join(@memo.memo.split("\n"),tag(:br))%>
           </li>
         </ul>
+        
       </div>
-      
     </div>
   </div>
 </main>
