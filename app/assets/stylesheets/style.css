@@ -389,7 +389,7 @@ a {
  
 .un-bookmark-btn {
   font-size: 30px;
-  color: #333333;
+  color: #402848;
 }
 
 .bookmark_image{
@@ -461,5 +461,12 @@ a {
   }
   .table{
     width: 100%;
+  }
+  .card {
+    width: calc((100% - 50px) / 2);
+  }
+  .bookmark_list{
+    width: calc(100% / 1);
+    padding: 20px 15px;
   }
 }

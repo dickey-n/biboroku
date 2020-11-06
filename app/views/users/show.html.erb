@@ -24,12 +24,12 @@
       <% @user.memos.each do |memo|%>
         <li class="memos_list">
           <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}", class: :memo_user %>
-          （<%= link_to memo.museum.title, class: :memo_user %>）
+          <%= memo.museum.title %> / Likes : <%= memo.likes.count %>
         </li>
       <% end %>
       <% if user_signed_in? && current_user.id == @user.id%>
       <h2 class="page-heading">
-        <%= "My MuseuM"%>
+        <%= "My Gallery"%>
       </h2>
       <div class="bookmark__list">
         <% @user.bookmarks.each do |bookmark|%>
