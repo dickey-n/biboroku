@@ -15,6 +15,11 @@ class Museum < ApplicationRecord
   end
 
   has_many :memos, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   belongs_to :user
   has_one_attached :image
+
+  def bookmark_by?(user)
+    bookmarks.where(user_id: user.id).exists?
+  end
 end
