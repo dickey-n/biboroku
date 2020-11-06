@@ -27,7 +27,7 @@
           （<%= link_to memo.museum.title, class: :memo_user %>）
         </li>
       <% end %>
-      <% if current_user.id == @user.id%>
+      <% if user_signed_in? && current_user.id == @user.id%>
       <h2 class="page-heading">
         <%= "My MuseuM"%>
       </h2>
