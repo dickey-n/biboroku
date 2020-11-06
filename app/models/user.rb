@@ -8,10 +8,13 @@ class User < ApplicationRecord
   validates :profile, presence: true
 
   has_many :museums
-
   has_many :memos, dependent: :destroy
+
   has_many :likes, dependent: :destroy
   has_many :liked_memos, through: :likes, source: :memo
+
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_museums, through: :bookmarks, source: :museum
 
   mount_uploader :image, ImageUploader
 
@@ -19,4 +22,7 @@ class User < ApplicationRecord
     likes.where(memo_id: memo_id).exists?
   end
 
+  def bookmarked_by?(museum_id)
+    bookmarks.where(museum_id: museum_id).exists?
+  end
 end

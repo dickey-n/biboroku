@@ -1,9 +1,13 @@
 <main class="main">
   <div class="inner">
     <div class="museum__wrapper">
-      <p class="museum__hedding">
+      <div class="museum__hedding">
         <%= @museum.title%>
-      </p>
+      
+        <div class="bookmark__icon" id="bookmark_<%= @museum.id %>" >
+          <%= render partial: "bookmarks/bookmark", local: {museum: @museum, bookmark: @bookmark} %>
+        </div>
+      </div>
 
       <% if user_signed_in? && current_user.admin? %>
         <div class="museum__manage">

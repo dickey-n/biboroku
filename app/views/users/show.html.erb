@@ -27,6 +27,18 @@
           （<%= link_to memo.museum.title, class: :memo_user %>）
         </li>
       <% end %>
+      <% if user_signed_in? && current_user.id == @user.id%>
+      <h2 class="page-heading">
+        <%= "My MuseuM"%>
+      </h2>
+      <div class="bookmark__list">
+        <% @user.bookmarks.each do |bookmark|%>
+          <li class="bookmark_list">
+            <%= link_to image_tag(bookmark.museum.image, class: :bookmark_image ), museum_path(bookmark.museum.id) %>
+          </li>
+        <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
