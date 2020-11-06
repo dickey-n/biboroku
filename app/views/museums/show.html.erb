@@ -59,7 +59,7 @@
           <% @memos.each do |memo| %>
             <li class="comments_list">
               <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}/memos/#{memo.id}" %><br />
-              （written by : <%= link_to memo.user.name, "/users/#{memo.user.id}"%>）
+              （written by : <%= link_to memo.user.name, "/users/#{memo.user.id}"%> / Likes : <%= memo.likes.count %>)
             </li>
           <% end %>
         <% end %>
