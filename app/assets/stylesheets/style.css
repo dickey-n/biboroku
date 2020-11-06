@@ -383,13 +383,28 @@ a {
 }
 
 .bookmark-btn {
-  font-size: 20px;
-  color: #000000c7;
+  font-size: 30px;
+  color: #c7c7c7c7;
 }
  
 .un-bookmark-btn {
-  font-size: 20px;
-  color: #3ad82b;
+  font-size: 30px;
+  color: #333333;
+}
+
+.bookmark_image{
+  height: 200px;
+  width: auto;
+}
+
+.bookmark__list{
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.bookmark_list{
+  width: calc(100% / 3);
+  padding: 20px 15px;
 }
 
 /* フッター */

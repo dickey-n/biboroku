@@ -27,13 +27,17 @@
           （<%= link_to memo.museum.title, class: :memo_user %>）
         </li>
       <% end %>
+      <% if current_user.id == @user.id%>
       <h2 class="page-heading">
-        <%= "#{@user.name}'s BookMark"%>
+        <%= "My MuseuM"%>
       </h2>
-      <% @user.bookmarks.each do |bookmark|%>
-        <li class="memos_list">
-          <%= link_to image_tag(bookmark.museum.image, class: :bookmark_image ), root_path %>
-        </li>
+      <div class="bookmark__list">
+        <% @user.bookmarks.each do |bookmark|%>
+          <li class="bookmark_list">
+            <%= link_to image_tag(bookmark.museum.image, class: :bookmark_image ), museum_path(bookmark.museum.id) %>
+          </li>
+        <% end %>
+      </div>
       <% end %>
     </div>
   </div>

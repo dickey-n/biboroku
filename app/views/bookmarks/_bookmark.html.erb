@@ -2,11 +2,11 @@
 <% if user_signed_in? %>
   <% unless current_user.bookmarked_by?(@museum.id)%>
     <%= link_to "/museums/#{@museum.id}/bookmarks", method: :post, remote: true do %>
-      <i class="fas fa-bookmark bookmark-btn"></i>
+      <i class="fas fa-check-square bookmark-btn"></i>
     <% end %>
   <% else %>
     <%= link_to "/museums/#{@museum.id}/bookmarks", method: :delete, remote: true do %>
-      <i class="fas fa-bookmark un-bookmark-btn"></i>
+      <i class="fas fa-check-square un-bookmark-btn"></i>
     <% end %>
   <% end %>
 <% end %>
