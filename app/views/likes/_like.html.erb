@@ -1,0 +1,10 @@
+<div class="delete__icon">
+<% if user_signed_in? %>
+  <% unless current_user.liked_by?(@memo.id)%>
+    <%= button_to "Like", "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes", remote: true %>
+  <% else %>
+    <%= button_to "Cancel", "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes/#{params[:id]}", method: :delete, remote: true %>
+  <% end %>
+  <p id='like_count'>Like: <%= @memo.likes.count %></p>
+<% end %>
+</div>

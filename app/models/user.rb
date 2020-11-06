@@ -15,4 +15,8 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  def liked_by?(memo_id)
+    likes.where(memo_id: memo_id).exists?
+  end
+
 end

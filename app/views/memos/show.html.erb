@@ -21,8 +21,8 @@
             <%= link_to image_tag("trash.png", class: :icon), museum_memo_path(@memo.id), method: :delete %>
           </div>
         <% else %>
-          <div class="delete__icon">
-            <%#= link_to image_tag("like.png", class: :icon), "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes" %>
+          <div id="like_<%= @memo.id %>" >
+            <%= render partial: "likes/like", local: {memo: @memo, like: @like} %>
           </div>
         <% end%>
 
@@ -30,14 +30,12 @@
           <li class="memo_list">
             <%= safe_join(@memo.memo.split("\n"),tag(:br))%>
           </li>
-          <p>Like: <%= @memo.likes.count %></p>
+          <% if current_user.id == @memo.id %>
+            <p id='like_count'>Like: <%= @memo.likes.count %></p>
+          <% end %>
         </ul>
-
-        <%#= button_to 'いいねを取り消す', "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes", method: :delete %>
-        <%= button_to "Like", "/museums/#{@memo.museum.id}/memos/#{@memo.id}/likes" %>
         
       </div>
-      
     </div>
   </div>
 </main>

@@ -1,0 +1,6 @@
+$(function() {
+    setTimeout(function() {
+      location.reload();
+    },1);
+});
+$('#like_<%= @memo.id %>').html("<%= j(render partial: 'likes/like', locals: {memo: @memo,like: @like}) %>");
