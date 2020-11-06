@@ -25,5 +25,4 @@ class User < ApplicationRecord
   def bookmarked_by?(museum_id)
     bookmarks.where(museum_id: museum_id).exists?
   end
-
 end
