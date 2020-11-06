@@ -1,5 +1,5 @@
 class Bookmark < ApplicationRecord
   belongs_to :user
   belongs_to :museum
-  validates :user_id, uniqueness: { scope: :museum_id }
+  validates_uniqueness_of :museum_id, scope: :user_id
 end

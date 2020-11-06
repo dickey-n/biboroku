@@ -377,6 +377,21 @@ a {
   color: #ee4a4a;
 }
 
+/* BOOKMARKボタン　*/
+.bookmark__icon{
+  align-items: center;
+}
+
+.bookmark-btn {
+  font-size: 20px;
+  color: #000000c7;
+}
+ 
+.un-bookmark-btn {
+  font-size: 20px;
+  color: #3ad82b;
+}
+
 /* フッター */
 
 .footer {

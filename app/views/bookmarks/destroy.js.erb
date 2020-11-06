@@ -3,4 +3,4 @@ $(function() {
       location.reload();
     },1);
 });
-$('#like_<%= @museum.id %>').html("<%= j(render partial: 'bookmarks/bookmark', locals: {museum: @museum,bookmark: @bookmark}) %>");
+$('#bookmark_<%= @museum.id %>').html("<%= j(render partial: 'bookmarks/bookmark', locals: {museum: @museum, bookmark: @bookmark}) %>");
