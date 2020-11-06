@@ -1,0 +1,13 @@
+<div class="delete__icon">
+<% if user_signed_in? %>
+  <% unless current_user.liked_by?(@museum.id)%>
+    <%= link_to  "/museums/#{@museum.id}/bookmarks", method: :post, remote: true do %>
+      <i class="far fa-bookmark like-btn"></i>
+    <% end %>
+  <% else %>
+    <%= link_to  "/museums/#{@museum.id}/bookmarks", method: :delete, remote: true do %>
+      <i class="far fa-bookmark unlike-btn"></i>
+    <% end %>
+  <% end %>
+<% end %>
+</div>

@@ -4,6 +4,9 @@
       <p class="museum__hedding">
         <%= @museum.title%>
       </p>
+      <div class="like__icon" id="like_<%= @museum.id %>" >
+        <%= render partial: "bookmarks/bookmark", local: {museum: @museum, bookmark: @bookmark} %>
+      </div>
 
       <% if user_signed_in? && current_user.admin? %>
         <div class="museum__manage">

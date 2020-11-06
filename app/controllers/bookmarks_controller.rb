@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_like
+  before_action :set_bookmark
   before_action :authenticate_user!
 
   def create
@@ -16,7 +16,7 @@ class BookmarksController < ApplicationController
     params.permit(:museum_id, :user_id).merge(user_id: current_user.id, museum_id: params[:museum_id])
   end
 
-  def set_like
+  def set_bookmark
     @museum = Museum.find(params[:museum_id])
   end
 end
