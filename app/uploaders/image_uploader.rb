@@ -8,6 +8,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # 保存形式をJPGにする
   process convert: 'jpg'
 
+  storage :fog
+
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
   # サムネイルを生成する設定
   version :thumb do
     process resize_to_limit: [300, 300]
