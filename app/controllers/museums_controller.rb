@@ -13,4 +13,8 @@ class MuseumsController < ApplicationController
   def bookmarks
     @museums = current_user.bookmark_museums.includes(:user)
   end
+
+  def search
+    @museums = Museum.search(params[:keyword])
+  end
 end
