@@ -1,5 +1,9 @@
 <main class="main">
   <div class="inner">
+    <%= form_with(url: search_museums_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "search", class: "search-input" %>
+      <%= form.submit "search", class: "search-btn" %>
+    <% end %>
     <p class="card__title" id="hoge">Top Gallery</p>
     <div class="card__wrapper">
       <%= render partial: 'museums/museum', collection: @part_museums %>
