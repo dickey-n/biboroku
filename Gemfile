@@ -73,3 +73,5 @@ gem 'rmagick'
 gem 'kaminari'
 
 gem 'pry-rails'
+
+gem "aws-sdk-s3", require: false
