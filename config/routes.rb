@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     resources :memos, only: [:new, :index, :show, :create, :destroy] do
       resources :likes, only: [:create, :destroy]
     end
+
+    collection do
+      get 'search'
+    end
   end
 
   resources :users, only: :show
