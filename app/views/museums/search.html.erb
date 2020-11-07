@@ -1,9 +1,12 @@
 <main class="main">
   <div class="inner">
-    <%= form_with(url: search_museums_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form_with(url: search_museums_path, local: true, method: :get, class: "search_container") do |form| %>
       <%= form.text_field :keyword, placeholder: "Gallary Search", class: "search-input" %>
-      <%= form.submit "search", class: "search-btn" %>
+      <button type="submit" class="search_button">
+        <i class="fas fa-search"></i>
+      </button>
     <% end %>
+    <p class="card__title">Search Result</p>
     <div class="card__wrapper">
       <% @museums.each do |museum| %>
         <%= render partial: "museum", locals: { museum: museum } %>

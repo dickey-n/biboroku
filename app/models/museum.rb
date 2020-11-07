@@ -24,6 +24,9 @@ class Museum < ApplicationRecord
   def self.search(search)
     if search != ""
       Museum.where('text LIKE(?)', "%#{search}%")
+      .or(Museum.where('place LIKE(?)', "%#{search}%"))
+      .or(Museum.where('title LIKE(?)', "%#{search}%"))
+      .or(Museum.where('artist LIKE(?)', "%#{search}%"))
     else
       Museum.all
     end
