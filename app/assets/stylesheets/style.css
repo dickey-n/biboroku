@@ -389,7 +389,7 @@ a {
  
 .un-bookmark-btn {
   font-size: 30px;
-  color: #333333;
+  color: #402848;
 }
 
 .bookmark_image{
@@ -405,6 +405,36 @@ a {
 .bookmark_list{
   width: calc(100% / 3);
   padding: 20px 15px;
+}
+
+/* 検索フォーム */
+.search_container{
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  padding: 3px 10px;
+  margin: 20px 0;
+  border-radius: 10px;
+  height: 2.2em;
+  width: 300px;
+  overflow: hidden;
+  background-color: #e5ff00c7;
+}
+.search-input{
+  outline: none;
+  border: none;
+  height: 2.0em;
+  background-color: #e5ff00c7;
+}
+
+.search_container ::-webkit-input-placeholder {
+  color: #333333;
+}
+
+.search_button{
+  position: absolute;
+  top: 20%;
+  left: 80%;
 }
 
 /* フッター */
@@ -461,5 +491,12 @@ a {
   }
   .table{
     width: 100%;
+  }
+  .card {
+    width: calc((100% - 50px) / 2);
+  }
+  .bookmark_list{
+    width: calc(100% / 1);
+    padding: 20px 15px;
   }
 }

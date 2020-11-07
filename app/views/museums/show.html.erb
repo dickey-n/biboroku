@@ -48,7 +48,7 @@
       </div>
 
       <div class="museum__text">
-        <p class="detail__title">Museum Info</p>
+        <p class="detail__title">Gallery Info</p>
         <p class="detail__message">
           <%= safe_join(@museum.text.split("\n"),tag(:br))%>
         </p>
@@ -57,13 +57,13 @@
 
     <div class="museum__memos">
       <%= link_to image_tag("pen.png", class: :memo_icon), "/museums/#{@museum.id}/memos/new" %>
-      <h2 class="memo_title">Museum's MeMo</h2>
+      <h2 class="memo_title">Gallery's MeMo</h2>
       <ul class="comments_lists">
         <% if @memos %>
           <% @memos.each do |memo| %>
             <li class="comments_list">
               <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}/memos/#{memo.id}" %><br />
-              （written by : <%= link_to memo.user.name, "/users/#{memo.user.id}"%> / Likes : <%= memo.likes.count %>)
+              written by : <%= link_to memo.user.name, "/users/#{memo.user.id}"%> / Likes : <%= memo.likes.count %>
             </li>
           <% end %>
         <% end %>

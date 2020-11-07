@@ -20,4 +20,15 @@ class Museum < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+
+  def self.search(search)
+    if search != ""
+      Museum.where('text LIKE(?)', "%#{search}%")
+      .or(Museum.where('place LIKE(?)', "%#{search}%"))
+      .or(Museum.where('title LIKE(?)', "%#{search}%"))
+      .or(Museum.where('artist LIKE(?)', "%#{search}%"))
+    else
+      Museum.all
+    end
+  end
 end
