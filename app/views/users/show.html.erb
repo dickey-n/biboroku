@@ -2,9 +2,9 @@
   <div class="inner">
     <div class="user__wrapper">
       <% if @user.image? %>
-        <%= image_tag @user.image.url, class: :user_icon, alt: 'image_tag asset_path('default.jpg')' %>
+        <%= image_tag @user.image.url, class: :user_icon, alt: 'app/assets/images/default.jpg' %>
       <% else %>
-        <%= image_tag asset_path('default.jpg') class="user_icon" alt="ユーザーアイコン" %>
+        <img src="/assets/default.jpg" class="user_icon" alt="ユーザーアイコン" >
       <% end %>
       <table class="table">
         <tbody>
