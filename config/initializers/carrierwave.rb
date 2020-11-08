@@ -3,14 +3,13 @@ CarrierWave.configure do |config|
     config.storage :fog
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'biboroku'
-    config.asset_host = 'https://biboroku.s3.amazonaws.com'
-    config.fog_public     = false
-    config.fog_authenticated_url_expiration = 600  
+    config.fog_public     = true
     config.fog_credentials = {
       provider: 'aws',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      region: 'ap-northeast-1',
+      region: ENV['AWS_DEFAULT_REGION'],
+      secret_key_base: ENV['SECRET_KEY_BASE'],
       path_style: true
     }
   else
