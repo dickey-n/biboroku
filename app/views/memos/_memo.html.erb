@@ -2,7 +2,7 @@
   <% if memo.user.image? %>
     <%=link_to image_tag(memo.user.image.url, class: :profile_image), "/users/#{memo.user.id}" %>
   <% else %>
-    <%=link_to image_tag('/app/assets/images/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
+    <%=link_to image_tag('/assets/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
   <% end %>
 
   <div class="memo__user">
