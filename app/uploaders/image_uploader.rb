@@ -12,7 +12,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   elsif Rails.env.test?
     storage :file
   else
-    storage :aws
+    storage :fog
   end
 
   def store_dir
