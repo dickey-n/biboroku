@@ -4,6 +4,7 @@ CarrierWave.configure do |config|
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'biboroku'
     config.asset_host = 'https://biboroku.s3.amazonaws.com'
+    config.fog_public     = true
     config.fog_credentials = {
       provider: 'aws',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
