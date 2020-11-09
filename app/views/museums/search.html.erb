@@ -8,9 +8,16 @@
     <% end %>
     <p class="card__title">Search Result</p>
     <div class="card__wrapper">
+    <% if @museums.present? %>
       <% @museums.each do |museum| %>
         <%= render partial: "museum", locals: { museum: museum } %>
       <% end %>
+    <% else %>
+      <p class="result_title">Sorry...There is no search result</p>
+    <% end %>
+    </div>
+    <div class="more">
+      <%= link_to "← back", root_path %>
     </div>
   </div>
 </div>

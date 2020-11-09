@@ -438,6 +438,11 @@ a {
   left: 80%;
 }
 
+.result_title{
+  padding-bottom: 550px;
+  font-size: 20px;
+}
+
 /* エラー文 */
 .error-message{
   color: #ee4a4a
