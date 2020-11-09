@@ -1,4 +1,5 @@
-<%= form_with url: "/museums/#{params[:museum_id]}/memos", method: :post, local: true do |f| %>
+<%= form_with model: @memo, url: "/museums/#{params[:museum_id]}/memos", method: :post, local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
   <div class="memo_field">
     <%= f.label :memo, "memo" %><br />
     <%= f.text_area :memo, class: :text_area, placeholder: "作品の感想を思いのままに書いてみよう" %>

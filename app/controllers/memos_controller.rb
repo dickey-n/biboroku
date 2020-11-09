@@ -14,9 +14,7 @@ class MemosController < ApplicationController
     if @memo.save
       redirect_to museum_path(@memo.museum)
     else
-      @museum = @memo.museum
-      @memos = @museum.memos
-      render 'museums/show'
+      render :new
     end
   end
 

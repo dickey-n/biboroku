@@ -7,7 +7,7 @@ class MuseumsController < ApplicationController
 
   def show
     @museum = Museum.find(params[:id])
-    @memos = @museum.memos.includes(:user)
+    @memos = @museum.memos.includes(:user).order('created_at DESC')
   end
 
   def bookmarks

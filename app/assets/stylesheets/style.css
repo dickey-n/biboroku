@@ -437,6 +437,11 @@ a {
   left: 80%;
 }
 
+/* エラー文 */
+.error-message{
+  color: #ee4a4a
+}
+
 /* フッター */
 
 .footer {

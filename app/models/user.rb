@@ -4,9 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true
-  validates :profile, presence: true
-
   has_many :museums
   has_many :memos, dependent: :destroy
 
@@ -17,6 +14,15 @@ class User < ApplicationRecord
   has_many :bookmark_museums, through: :bookmarks, source: :museum
 
   mount_uploader :image, ImageUploader
+
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+
+  with_options presence: true do
+    validates :name
+    validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'Include both letters and numbers' }
+    validates :password_confirmation, format: { with: VALID_PASSWORD_REGEX, message: 'Include both letters and numbers' }
+    validates :profile
+  end
 
   def liked_by?(memo_id)
     likes.where(memo_id: memo_id).exists?
