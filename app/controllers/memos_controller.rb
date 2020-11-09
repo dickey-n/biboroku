@@ -22,6 +22,20 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
   end
 
+  def edit
+    @memo = Memo.find(params[:id])
+    redirect_to action: :index unless current_user.id == @memo.user_id
+  end
+
+  def update
+    @emo = Memo.find(params[:id])
+    if @memo.update(memo_params)
+      redirect_to museum_path(@memo.museum)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     memo = Memo.find(params[:id])
     memo.destroy
