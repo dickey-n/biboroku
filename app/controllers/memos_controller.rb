@@ -1,6 +1,7 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
+
   def new
     @memo = Memo.new
   end
@@ -28,7 +29,7 @@ class MemosController < ApplicationController
 
   def update
     if @memo.update(memo_params)
-      redirect_to museum_path(@memo.museum)
+      redirect_to museum_memo_path(@memo.id)
     else
       render :edit
     end
