@@ -1,5 +1,7 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_memo, only: [:show, :edit, :update, :destroy]
+
   def new
     @memo = Memo.new
   end
@@ -19,26 +21,22 @@ class MemosController < ApplicationController
   end
 
   def show
-    @memo = Memo.find(params[:id])
   end
 
   def edit
-    @memo = Memo.find(params[:id])
     redirect_to action: :index unless current_user.id == @memo.user_id
   end
 
   def update
-    @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
-      redirect_to museum_path(@memo.museum)
+      redirect_to museum_memo_path(@memo.id)
     else
       render :edit
     end
   end
 
   def destroy
-    memo = Memo.find(params[:id])
-    memo.destroy
+    @memo.destroy
     redirect_to root_path
   end
 
@@ -46,5 +44,9 @@ class MemosController < ApplicationController
 
   def memo_params
     params.require(:memo).permit(:memo).merge(user_id: current_user.id, museum_id: params[:museum_id])
+  end
+
+  def set_memo
+    @memo = Memo.find(params[:id])
   end
 end
