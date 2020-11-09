@@ -10,13 +10,12 @@ class MemosController < ApplicationController
   end
 
   def create
+    #binding.pry
     @memo = Memo.new(memo_params)
     if @memo.save
       redirect_to museum_path(@memo.museum)
     else
-      @museum = @memo.museum
-      @memos = @museum.memos
-      render 'museums/show'
+      render :new
     end
   end
 
