@@ -23,7 +23,7 @@
       </h2>
       <% @user.memos.each do |memo|%>
         <li class="memos_list">
-          <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}", class: :memo_user %>
+          <%= link_to simple_format(memo.memo), "/museums/#{memo.museum.id}/memos/#{memo.id}", class: :memo_user %>
           <%= memo.museum.title %> / Likes : <%= memo.likes.count %>
         </li>
       <% end %>
