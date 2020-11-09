@@ -20,9 +20,9 @@ class Admin::MuseumsController < ApplicationController
   end
 
   def update
-    museum = Museum.find(params[:id])
-    if museum.update(museum_params)
-      redirect_to museum_path(museum.id)
+    @museum = Museum.find(params[:id])
+    if @museum.update(museum_params)
+      redirect_to museum_path(@museum.id)
     else
       render :edit
     end

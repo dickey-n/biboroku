@@ -1,8 +1,8 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">New MeMo</h2>
-        <%= form_with model: @memo, url: "/museums/#{params[:museum_id]}/memos", method: :post, local: true do |f| %>
+      <h2 class="page-heading">Edit MeMo</h2>
+        <%= form_with model: @memo, url: "/museums/#{@memo.museum.id}/memos/#{@memo.id}", local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
           <div class="memo_field">
             <%= f.label :memo, "memo" %><br />
