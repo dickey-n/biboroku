@@ -1,5 +1,6 @@
 class Admin::MuseumsController < ApplicationController
   before_action :if_not_admin
+  before_action :set_museum, only: [:edit, :update, :destroy]
 
   def new
     @museum = Museum.new
@@ -15,12 +16,10 @@ class Admin::MuseumsController < ApplicationController
   end
 
   def edit
-    @museum = Museum.find(params[:id])
     redirect_to action: :index unless current_user.id == @museum.user_id
   end
 
   def update
-    @museum = Museum.find(params[:id])
     if @museum.update(museum_params)
       redirect_to museum_path(@museum.id)
     else
@@ -29,8 +28,7 @@ class Admin::MuseumsController < ApplicationController
   end
 
   def destroy
-    museum = Museum.find(params[:id])
-    museum.destroy
+    @museum.destroy
     redirect_to root_path
   end
 
@@ -42,5 +40,9 @@ class Admin::MuseumsController < ApplicationController
 
   def museum_params
     params.require(:museum).permit(:title, :place, :prefecture_id, :genre_id, :artist, :text, :image).merge(user_id: current_user.id)
+  end
+
+  def set_museum
+    @museum = Museum.find(params[:id])
   end
 end
