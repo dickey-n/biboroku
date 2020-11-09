@@ -111,6 +111,11 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.9.0)
     excon (0.78.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.13.1)
     fog-aws (3.6.7)
       fog-core (~> 2.1)
@@ -336,6 +341,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  factory_bot_rails
   fog-aws
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
