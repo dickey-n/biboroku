@@ -10,8 +10,8 @@ class Museum < ApplicationRecord
     validates :artist
     validates :image
 
-    validates :prefecture_id, numericality: { other_than: 0 }
-    validates :genre_id, numericality: { other_than: 1 }
+    validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
+    validates :genre_id, numericality: { other_than: 1, message: 'Select' }
   end
 
   has_many :memos, dependent: :destroy
