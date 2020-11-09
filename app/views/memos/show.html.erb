@@ -18,7 +18,7 @@
 
         <% if user_signed_in? && current_user.id == @memo.user_id %>
           <div class="delete__icon">
-            <%= link_to "edit", " /museums/#{@memo.museum.id}/memos/#{@memo.id}/edit" %>
+            <%= link_to image_tag("note.png", class: :delete_icon), " /museums/#{@memo.museum.id}/memos/#{@memo.id}/edit" %>
             <%= link_to image_tag("trash.png", class: :delete_icon), museum_memo_path(@memo.id), method: :delete %>
             <p id='like_count'>Like: <%= @memo.likes.count %></p>
           </div>
