@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :museums, only: [:index, :show] do
     resource :bookmarks, only: [:create, :destroy]
 
-    resources :memos, only: [:new, :index, :show, :create, :destroy] do
+    resources :memos, only: [:new, :index, :show, :edit, :update, :create, :destroy] do
       resources :likes, only: [:create, :destroy]
     end
 
