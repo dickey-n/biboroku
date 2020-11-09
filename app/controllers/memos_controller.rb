@@ -28,7 +28,7 @@ class MemosController < ApplicationController
   end
 
   def update
-    @emo = Memo.find(params[:id])
+    @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
       redirect_to museum_path(@memo.museum)
     else
