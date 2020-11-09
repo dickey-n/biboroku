@@ -15,7 +15,6 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
 
   with_options presence: true do
@@ -24,7 +23,6 @@ class User < ApplicationRecord
     validates :password_confirmation, format: { with: VALID_PASSWORD_REGEX, message: 'Include both letters and numbers' }
     validates :profile
   end
-  
 
   def liked_by?(memo_id)
     likes.where(memo_id: memo_id).exists?
