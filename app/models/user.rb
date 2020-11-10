@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :memos, dependent: :destroy
 
   has_many :likes, dependent: :destroy
-  has_many :liked_memos, through: :likes, source: :memo
+  has_many :like_memos, through: :likes, source: :memo
 
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_museums, through: :bookmarks, source: :museum

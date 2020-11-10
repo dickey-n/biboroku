@@ -16,7 +16,7 @@ class Museum < ApplicationRecord
 
   has_many :memos, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-  has_many :bookmark_users, through: :bookmarks, source: :user
+  has_many :bookmark_museums, through: :bookmarks, source: :user
 
   belongs_to :user
   has_one_attached :image
