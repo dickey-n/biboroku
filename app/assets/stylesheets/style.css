@@ -380,15 +380,21 @@ a {
 
 /* BOOKMARKボタン　*/
 .bookmark__icon{
-  align-items: center;
+  position: relative;
 }
 
 .bookmark-btn {
+  position: absolute;
+  top: 10%;
+  right: 48.9%;
   font-size: 30px;
   color: #c7c7c7c7;
 }
  
 .un-bookmark-btn {
+  position: absolute;
+  top: 10%;
+  right: 48.9%;
   font-size: 30px;
   color:  #ee4a4a;
 }
