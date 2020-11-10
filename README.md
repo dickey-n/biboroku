@@ -1,9 +1,8 @@
-# Application
+# BiBoRoku
 
 
-## Name
+## URL
 
-**BiBoRoku**
 
 <https://biboroku.herokuapp.com/>
 
