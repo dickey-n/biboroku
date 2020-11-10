@@ -1,14 +1,15 @@
 # Application
 
-![demo](https://i.gyazo.com/bf01af0c114cc0af458c7a41a7cb2b3c.gif)
 
 ## Name
 
-**[BiBoRoku]:** #(https://biboroku.herokuapp.com/)
+[BiBoRoku]: #(https://biboroku.herokuapp.com/)
+
 
 ## Summary
 
 展覧会のメモ投稿アプリケーション
+
 
 ## Usage
 
@@ -21,6 +22,7 @@ $ rails db:migrate
 $ rails s
 → http://localhost:3000/
 ```
+
 
 ## Problem solving
 
@@ -60,6 +62,7 @@ $ rails s
 ### 展覧会の検索機能
 - フリーワードから展覧会を検索できるようにする
 
+
 ## Function
 
 ### マイページ
@@ -73,6 +76,7 @@ $ rails s
 
 ### 『いいね』機能
 ![demo](https://i.gyazo.com/3da661976d10813232a7d15705a4c58b.gif)
+
 
 # Database design
 
