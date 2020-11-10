@@ -3,7 +3,8 @@
 
 ## Name
 
-[BiBoRoku]:(https://biboroku.herokuapp.com/)
+**BiBoRoku**
+<https://biboroku.herokuapp.com/>
 
 
 ## Summary
