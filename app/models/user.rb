@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_museums, through: :bookmarks, source: :museum
 
-  mount_uploader :image, ImageUploader
+  has_one_attached :avatar
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
 
