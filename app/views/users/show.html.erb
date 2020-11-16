@@ -2,9 +2,9 @@
   <div class="inner">
     <div class="user__wrapper">
       <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar, class: :user_icon, alt: '/assets/images/default.jpg' %>
+        <%= image_tag @user.avatar, class: :user_icon, alt: '/public/imagess/default.jpg' %>
       <% else %>
-        <%= image_tag '/assets/default.jpg', class: :user_icon, alt: "ユーザーアイコン" %>
+        <%= image_tag '/images/default.jpg', class: :user_icon, alt: "ユーザーアイコン" %>
       <% end %>
       <table class="table">
         <tbody>
