@@ -2,7 +2,7 @@
   <% if memo.user.avatar.attached? %>
     <%=link_to image_tag(memo.user.avatar, class: :profile_image), "/users/#{memo.user.id}" %>
   <% else %>
-    <%=link_to image_tag('/assets/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
+    <%=link_to image_tag('/images/default.jpg', class: :profile_image), "/users/#{memo.user.id}" %>
   <% end %>
 
   <div class="memo__user">
