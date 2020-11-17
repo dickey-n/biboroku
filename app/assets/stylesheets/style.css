@@ -266,7 +266,7 @@ a {
 
 .memo__user{
   height: 32px;
-  padding-left: 10px;
+  padding: 0 15px;
   display: inline-block;
   vertical-align: middle;
 }
