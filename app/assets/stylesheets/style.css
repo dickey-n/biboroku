@@ -167,6 +167,10 @@ a {
   padding: 30px 0;
 }
 
+.memo_main{
+  padding: 10px 0;
+}
+
 .more{
   padding: 10px 0;
   font-size: 16px;
@@ -181,7 +185,7 @@ a {
   min-height: calc(100vh - 161px);
 }
 
-.museum__hedding{
+.museum__heading{
   font-size: 25px;
   font-weight: bold;
   text-align: center;

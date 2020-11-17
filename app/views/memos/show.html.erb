@@ -1,7 +1,7 @@
 <main class="main">
   <div class="inner">
     <div class="museum__wrapper">
-      <p class="museum__hedding">
+      <p class="museum__heading">
         <%= @memo.museum.title%>
       </p>
 
@@ -33,6 +33,8 @@
             <%= safe_join(@memo.memo.split("\n"),tag(:br))%>
           </li>
         </ul>
+
+        Day: <%= l @memo.updated_at %>
         
       </div>
     </div>
